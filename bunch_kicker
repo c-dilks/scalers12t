@@ -18,33 +18,19 @@ run_randomizer=0
 
 # manually removed bunches
 > kicked_manual
-echo 16570 22 >> kicked_manual
-echo 16582 61 >> kicked_manual
-echo 16587 29 >> kicked_manual
-echo 16593 9 >> kicked_manual
-echo 16597 27 >> kicked_manual
-echo 16602 56 >> kicked_manual
-echo 16618 40 >> kicked_manual
-echo 16625 23 >> kicked_manual
-echo 16626 12 >> kicked_manual
-echo 16626 19 >> kicked_manual
-echo 16650 58 >> kicked_manual
-echo 16655 75 >> kicked_manual
-echo 16656 15 >> kicked_manual
-echo 16668 26 >> kicked_manual
-echo 16669 26 >> kicked_manual
-echo 16671 96 >> kicked_manual
-echo 16678 70 >> kicked_manual
-echo 16685 23 >> kicked_manual
-echo 16686 17 >> kicked_manual
-echo 16697 108 >> kicked_manual
-echo 16701 21 >> kicked_manual
-echo 16701 28 >> kicked_manual
-echo 16704 90 >> kicked_manual
-echo 16704 101 >> kicked_manual
-echo 16705 51 >> kicked_manual
-echo 16720 7 >> kicked_manual
-echo 16731 60 >> kicked_manual
+echo 16438 74 >> kicked_manual
+echo 16445 69 >> kicked_manual
+echo 16450 59 >> kicked_manual
+echo 16460 45 >> kicked_manual
+echo 16460 86 >> kicked_manual
+echo 16460 94 >> kicked_manual
+echo 16461 6 >> kicked_manual
+echo 16462 110 >> kicked_manual
+echo 16463 66 >> kicked_manual
+echo 16468 51 >> kicked_manual
+echo 16484 4 >> kicked_manual
+echo 16487 22 >> kicked_manual
+
 
 > kicked
 > kicked_stat

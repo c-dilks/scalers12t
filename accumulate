@@ -40,16 +40,19 @@ for file in $(ls run*.dat); do
       paste $file spin$fill.tmp > $file.tmp
     fi
     # iterate indices
-    let i++
-    if [ "$fill" -ne "$filltmp" ]; then
-      filltmp=$fill
-      let filli++
+    totbx=$(head -n1 $file.tmp | awk '{print $26}')
+    if [ $totbx -ne 0 ]; then
+      let i++
+      if [ "$fill" -ne "$filltmp" ]; then
+        filltmp=$fill
+        let filli++
+      fi
+      echo "$i $runnum $filli $fill $runtime" 
+      # add columns for run index, run #, and fill # and write to acc file
+      while read line; do
+        echo "$i $runnum $filli $fill $runtime $line" >> $f
+      done < $file.tmp
     fi
-    echo "$i $runnum $filli $fill $runtime" 
-    # add columns for run index, run #, and fill # and write to acc file
-    while read line; do
-      echo "$i $runnum $filli $fill $runtime $line" >> $f
-    done < $file.tmp
   fi
 done
 popd > /dev/null

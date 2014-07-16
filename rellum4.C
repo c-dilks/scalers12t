@@ -438,20 +438,23 @@ void rellum4(const char * var="i",Bool_t printPNGs=0,
           };
 
           // rellum uncertainty propagation -- FORMULA
-          if(r==1)
-            unc = sqrt( ( (LL[1] + LL[3]) * (LL[0] + LL[1] + LL[2] + LL[3]) ) / pow((LL[0] + LL[2]), 3) );
-          else if(r==2)
-            unc = sqrt( ( (LL[2] + LL[3]) * (LL[0] + LL[1] + LL[2] + LL[3]) ) / pow((LL[0] + LL[1]), 3) );
-          else if(r==3)
-            unc = sqrt( ( (LL[0] + LL[3]) * (LL[0] + LL[1] + LL[2] + LL[3]) ) / pow((LL[1] + LL[2]), 3) );
-          else if(r==4) unc = sqrt( ( LL[3] * (LL[0]+LL[3])) / pow(LL[0], 3));
-          else if(r==5) unc = sqrt( ( LL[1] * (LL[0]+LL[1])) / pow(LL[0], 3));
-          else if(r==6) unc = sqrt( ( LL[2] * (LL[0]+LL[2])) / pow(LL[0], 3));
-          else if(r==7) unc = sqrt( ( LL[3] * (LL[2]+LL[3])) / pow(LL[2], 3));
-          else if(r==8) unc = sqrt( ( LL[1] * (LL[1]+LL[2])) / pow(LL[2], 3));
-          else if(r==9) unc = sqrt( ( LL[3] * (LL[1]+LL[3])) / pow(LL[1], 3));
+          if(LL[0]*LL[1]*LL[2]*LL[3]>0)
+          {
+            if(r==1)
+              unc = sqrt( ( (LL[1] + LL[3]) * (LL[0] + LL[1] + LL[2] + LL[3]) ) / pow((LL[0] + LL[2]), 3) );
+            else if(r==2)
+              unc = sqrt( ( (LL[2] + LL[3]) * (LL[0] + LL[1] + LL[2] + LL[3]) ) / pow((LL[0] + LL[1]), 3) );
+            else if(r==3)
+              unc = sqrt( ( (LL[0] + LL[3]) * (LL[0] + LL[1] + LL[2] + LL[3]) ) / pow((LL[1] + LL[2]), 3) );
+            else if(r==4) unc = sqrt( ( LL[3] * (LL[0]+LL[3])) / pow(LL[0], 3));
+            else if(r==5) unc = sqrt( ( LL[1] * (LL[0]+LL[1])) / pow(LL[0], 3));
+            else if(r==6) unc = sqrt( ( LL[2] * (LL[0]+LL[2])) / pow(LL[0], 3));
+            else if(r==7) unc = sqrt( ( LL[3] * (LL[2]+LL[3])) / pow(LL[2], 3));
+            else if(r==8) unc = sqrt( ( LL[1] * (LL[1]+LL[2])) / pow(LL[2], 3));
+            else if(r==9) unc = sqrt( ( LL[3] * (LL[1]+LL[3])) / pow(LL[1], 3));
 
-          err_d[t][c][r]->SetBinContent(b,unc);
+            err_d[t][c][r]->SetBinContent(b,unc);
+          };
         };
       };
     };
@@ -606,7 +609,7 @@ void rellum4(const char * var="i",Bool_t printPNGs=0,
           mmm[s] = mul_d[t][c][s]->GetBinContent(b);
           tt[s] = tot_d[s]->GetBinContent(b);
         };
-        if(tt[0]*tt[1]*tt[2]*tt[3]>0)
+        if(tt[0]*tt[1]*tt[2]*tt[3]>0 && mmm[0]*mmm[1]*mmm[2]*mmm[3]>0)
         {
           rrr[1] = (mmm[3] + mmm[1]) / (mmm[2] + mmm[0]);
           rrr[2] = (mmm[3] + mmm[2]) / (mmm[1] + mmm[0]);

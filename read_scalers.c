@@ -23,7 +23,7 @@ int main(int argc, char * argv[])
     };
   };
   int runnum, boardnum, unixtime;
-  sscanf(filename,"sca2012/run%d_%d_%d.sca",&runnum,&boardnum,&unixtime);
+  sscanf(filename,"sca2012t/run%d_%d_%d.sca",&runnum,&boardnum,&unixtime);
   printf("reading %s\n",filename);
   printf("runnum=%d\nboard=%d\n",runnum,boardnum);
 
@@ -100,7 +100,7 @@ int main(int argc, char * argv[])
 
   // print scaler counts to datfile
   char datfile[128];
-  sprintf(datfile,"datfiles/run%d_%d.dat",runnum,boardnum);
+  sprintf(datfile,"datfiles/run%d_%d_%d.dat",runnum,boardnum,unixtime);
   FILE * fo;
   fo=fopen(datfile,"w");
   for(b=0; b<120; b++)

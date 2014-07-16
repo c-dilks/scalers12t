@@ -9,11 +9,11 @@ mkdir -p pdf_bXings_runs
 mkdir -p pdfs
 mkdir -p png_rellum
 
-touch sca2013; rm sca2013
-ln -sv /GreyDisk1/sca2013 sca2013
+touch sca2012t; rm sca2012t
+ln -sv /GreyDisk1/sca2012t sca2012t
 
 touch spinpat; rm spinpat
 ln -sv ../fmstxt/spinpat spinpat
 
 touch pol.root; rm pol.root
-ln -sv ../polar12/pol.root pol.root
+ln -sv ../polar12t/pol.root pol.root

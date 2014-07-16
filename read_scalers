@@ -3,7 +3,7 @@
 
 f="reader.bat"
 outdir="datfiles"
-indir="sca2012"
+indir="sca2012t"
 
 echo "Executable = sca_read_bin.o" > $f
 echo "Universe = vanilla" >> $f
