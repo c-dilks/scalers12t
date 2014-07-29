@@ -33,7 +33,7 @@ Analysis Procedure
     - then type "out > FILE_LIST"; this will create a file called "FILE_LIST" in 
       your current local (RCAS) directory and pipe all output from hsi to this file
     - run12 rellum uses board 12 data, so to list all the board 12 scaler files, type
-      "ls */*/*_12_*.sca" and be patient
+      "ls */*/*_12_*.sca" and be patient 
     - when the command is done, exit HPSS and check FILE_LIST for the proper output
     - execute BuildList_2012 to build lists of files to submit to the data carousel; 
       files_to_retrieve*.lst will be created, with 150 requests per file
